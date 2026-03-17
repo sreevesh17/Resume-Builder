@@ -1,0 +1,172 @@
+:root {
+  --resume-primary: #1a3c5e;
+  --resume-accent: #f39c12;
+  --resume-sidebar: #f8f9fa;
+  --resume-text-main: #2c3e50;
+  --resume-text-light: #7f8c8d;
+  --resume-border: #dcdde1;
+}
+
+.resume-a4-container {
+  padding: 20px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+}
+
+.resume-sheet {
+  width: 210mm;
+  min-height: 297mm;
+  background: white;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  display: flex;
+  font-family: 'Inter', sans-serif;
+  color: var(--resume-text-main);
+  margin: 0 auto;
+}
+
+/* === THEME 1: MODERN (Default) === */
+.resume-sheet.theme-modern .resume-sidebar {
+  width: 32%;
+  background-color: var(--resume-primary);
+  color: white;
+  padding: 40px 25px;
+}
+
+.resume-sheet.theme-modern .resume-main {
+  width: 68%;
+  padding: 40px;
+}
+
+.resume-sheet.theme-modern .sidebar-title {
+  border-bottom: 2px solid var(--resume-accent);
+  padding-bottom: 5px;
+}
+
+/* === THEME 2: CLEAN (Graceful & Light) === */
+.resume-sheet.theme-clean {
+  flex-direction: column;
+}
+
+.resume-sheet.theme-clean .resume-sidebar {
+  width: 100%;
+  background: #fff;
+  color: #333;
+  padding: 30px 50px 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.resume-sheet.theme-clean .resume-main {
+  width: 100%;
+  padding: 30px 50px;
+}
+
+.resume-sheet.theme-clean .resume-name {
+  color: #2c3e50;
+  font-size: 2.2rem;
+}
+
+.resume-sheet.theme-clean .section-title {
+  color: #3498db;
+}
+
+.resume-sheet.theme-clean .section-divider::after {
+  background: #3498db;
+}
+
+/* === THEME 3: BOLD (Linda Sharedan Style) === */
+.resume-sheet.theme-bold .resume-sidebar {
+  width: 35%;
+  background-color: #2c3e50;
+  color: #fff;
+  padding: 40px 30px;
+  border-right: 5px solid #2980b9;
+}
+
+.resume-sheet.theme-bold .resume-main {
+  width: 65%;
+  padding: 40px;
+}
+
+.resume-sheet.theme-bold .resume-name {
+  color: #2c3e50;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.resume-sheet.theme-bold .sidebar-title {
+  color: #3498db;
+  font-size: 1rem;
+}
+
+/* === Theme Color Accents === */
+.theme-clean .resume-designation { color: #3498db; }
+.theme-bold .resume-designation { color: #2980b9; }
+
+/* Responsive tweaks for templates */
+@media print {
+  .template-selector, .modal-close-btn, .print-btn { display: none !important; }
+}
+
+/* Shared Components */
+.profile-image-container { display: flex; justify-content: center; margin-bottom: 10px; }
+.profile-placeholder {
+  width: 100px; height: 100px; border-radius: 50%; background: #eee;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2.5rem; font-weight: bold; color: #666;
+}
+
+.sidebar-section { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+.sidebar-title { text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1.5px; font-weight: 700; margin-bottom: 5px; }
+
+.contact-item { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; }
+.skills-list { display: flex; flex-wrap: wrap; gap: 5px; }
+.skill-tag { background: rgba(0,0,0,0.05); padding: 3px 8px; border-radius: 3px; font-size: 0.75rem; }
+.theme-modern .skill-tag, .theme-bold .skill-tag { background: rgba(255,255,255,0.15); color: #fff; }
+
+.resume-header { margin-bottom: 25px; }
+.resume-name { margin: 0; font-weight: 800; }
+.resume-designation { font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--resume-accent); }
+
+.main-section { margin-bottom: 25px; }
+.section-header { display: flex; align-items: center; gap: 10px; }
+.section-title { margin: 0; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; }
+.section-divider { height: 1px; background: #eee; margin: 5px 0 12px; position: relative; }
+.section-divider::after { content: ''; position: absolute; left: 0; top: -1px; width: 40px; height: 3px; background: var(--resume-accent); }
+
+.section-content { font-size: 0.9rem; line-height: 1.5; color: #444; }
+.list-line { margin-bottom: 4px; position: relative; padding-left: 15px; }
+.list-line::before { content: '•'; position: absolute; left: 0; color: var(--resume-accent); }
+
+@media print {
+  .resume-a4-container { padding: 0; background: none; }
+  .resume-sheet { box-shadow: none; margin: 0; border: none; }
+}
+
+.list-line {
+  margin-bottom: 5px;
+  position: relative;
+  padding-left: 15px;
+}
+
+.list-line::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--resume-accent);
+}
+
+@media print {
+  .resume-a4-container {
+    padding: 0;
+    background: none;
+  }
+  .resume-sheet {
+    box-shadow: none;
+    width: 100%;
+  }
+}
